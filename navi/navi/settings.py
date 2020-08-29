@@ -166,3 +166,15 @@ LOGGING = {
         },
     }
 }
+
+# Celery settings
+# Celery broker redis://redis ip:port/number of db
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+# Celery result backend
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+# Setting celery content format
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+# Celery timezone，same as TIME_ZONE in previous settings
+CELERY_TIMEZONE = TIME_ZONE
